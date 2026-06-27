@@ -1,157 +1,190 @@
-<header style="text-align:center; background:#0a2a66; color:white; padding:10px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curaçao World Cup - Match Center</title>
+    
+    <style>
+        .promo-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+        
+        header {
+            text-align: center;
+            background: #0a2a66;
+            color: white;
+            padding: 10px;
+        }
+        
+        header img {
+            width: 100%;
+            max-height: 120px;
+            object-fit: cover;
+        }
+        
+        section {
+            padding: 10px;
+            background: white;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        
+        marquee {
+            background: #ffd700;
+            padding: 8px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 15px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        a {
+            color: #0a2a66;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
-  <img src="bluewave-banner.jpg" style="width:100%; max-height:120px; object-fit:cover;">
+    <header>
+        <img src="bluewave-banner.jpg" alt="Blue Wave Banner">
+        <h2>Curacao 🇨🇼 vs Germany 🇩🇪</h2>
+        <p>1–1 (17 min)</p>
+        <small>Our greatest World Cup moment 🔥</small>
+    </header>
 
-  <h2>Curacao 🇨🇼 vs Germany 🇩🇪</h2>
-  <p>1–1 (17 min)</p>
-  <small>Our greatest World Cup moment 🔥</small>
+    <section style="text-align:center;">
+        <b>⚽ Match Center</b><br><br>
+        <a href="https://www.fifa.com" target="_blank">📊 Results</a> |
+        <a href="https://www.fifa.com" target="_blank">📅 Upcoming</a>
+    </section>
 
-</header>
-<section style="padding:10px; text-align:center;">
+    <section id="calendar">
+        <h3>📅 Today</h3>
+        <div id="today-date"></div>
+    </section>
 
-  <b>⚽ Match Center</b><br><br>
+    <marquee>
+        🔥 Mini Market – open late  
+        🔥 Pizza King – lunch deal  
+        🔥 Salon Bella – walk in today  
+    </marquee>
 
-  <a href="https://www.fifa.com" target="_blank">📊 Results</a> |
-  <a href="https://www.fifa.com" target="_blank">📅 Upcoming</a>
+    <section>
+        <h3>⭐ Paid Promos</h3>
+        <div id="promos">
+            <div class="promo-card">
+                <img src="promo1.jpg" style="width:100%; border-radius:8px;" alt="Promo">
+                <h4>Pizza King</h4>
+                <p>Buy 1 Get 1 Free 🍕</p>
+                <a href="https://maps.google.com" target="_blank">📍 Directions</a>
+            </div>
+        </div>
+    </section>
 
-</section>
-<section id="calendar" style="padding:10px;">
+    <section style="text-align:center;">
+        <h3>📢 Add your FREE shoutout</h3>
+        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20post%20a%20FREE%20shoutout.%20Store:" target="_blank">
+            Post Free Shoutout on WhatsApp
+        </a>
+        <br><br>
+        <marquee id="shoutouts" style="background: #ffd700; padding: 8px; border-radius: 8px;"></marquee>
+    </section>
 
-  <h3>📅 Today</h3>
-
-  <div id="today-date"></div>
-
-</section>
-
-<script>
-const today = new Date();
-document.getElementById("today-date").innerText =
-  today.toDateString();
-</script>
-
-<marquee style="background:#ffd700; padding:8px;">
-
-🔥 Mini Market – open late  
-🔥 Pizza King – lunch deal  
-🔥 Salon Bella – walk in today  
-
-</marquee>
-
-<section style="padding:10px;">
-
-  <h3>⭐ Paid Promos</h3>
-
-  <div class="promo-card">
-    <img src="promo1.jpg" style="width:100%; border-radius:8px;">
-    <h4>Pizza King</h4>
-    <p>Buy 1 Get 1 Free 🍕</p>
-    <a href="https://maps.google.com" target="_blank">📍 Directions</a>
-  </div>
-
-</section>
-
-<style>
-.promo-card {
-  border:1px solid #ddd;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius:10px;
-}
-</style>
-
-<section style="padding:10px; text-align:center;">
-
-  <h3>📢 Add your FREE shoutout</h3>
-
-  <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20post%20a%20FREE%20shoutout.%20Store:%20
-<marquee id="shoutouts"></marquee>
-
-<section id="promos"></section>
+    <footer>
+        <h4>🤝 Sponsors</h4>
+        <p>Coming soon</p>
+        
+        <h4>❤️ Support this app</h4>
+        <p>Donate to support this platform and gain visibility</p>
+        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20donate%20for%20this%20app%20can%20I%20get%20more%20info" 
+           style="color:blue;" target="_blank">
+           Donate via WhatsApp
+        </a>
+    </footer>
 
     <script>
+        // Display today's date
+        const today = new Date();
+        document.getElementById("today-date").innerText = today.toDateString();
 
-const API_URL = "https://script.google.com/macros/s/AKfycbz5MEMz6m5QdQ4Zlp4UOHnahJM-hSIXY0lvXp_ujecv-A8KHt6Al1cmJFe38yMDaq8D/exec";
+        // API Configuration
+        const API_URL = "https://script.google.com/macros/s/AKfycbz5MEMz6m5QdQ4Zlp4UOHnahJM-hSIXY0lvXp_ujecv-A8KHt6Al1cmJFe38yMDaq8D/exec";
 
-async function loadPromos() {
-  const res = await fetch(API_URL);
-  const data = await res.json();
+        // Display promos function
+        function displayPromos(data) {
+            const shoutoutBar = document.getElementById("shoutouts");
+            const promoSection = document.getElementById("promos");
 
-  displayPromos(data);
-}
-fetch("YOUR_SCRIPT_URL_HERE", {
-  method: "POST",
-  body: JSON.stringify({
-    store_name: "Mini Market",
-    message: "Open late tonight!",
-    date_start: "2026-06-27",
-    date_end: "2026-06-28"
-  })
-});
+            let shoutoutText = "";
+            let promoHTML = "";
 
-      
-</script>
+            const todayStr = new Date().toISOString().split("T")[0];
 
-    <script>
-loadPromos();
-</script>
+            if (data && Array.isArray(data)) {
+                data.forEach(item => {
+                    if (item.date_start <= todayStr && item.date_end >= todayStr) {
+                        if (item.type === "free") {
+                            shoutoutText += `🔥 ${item.store_name} - ${item.message} • `;
+                        }
+                        if (item.type === "paid") {
+                            promoHTML += `
+                                <div class="promo-card">
+                                    <h4>${item.store_name}</h4>
+                                    <p>${item.message}</p>
+                                </div>
+                            `;
+                        }
+                    }
+                });
+            }
 
-    
-<script>
+            if (shoutoutText) {
+                shoutoutBar.innerText = shoutoutText;
+            } else {
+                shoutoutBar.innerText = "📢 No active shoutouts today";
+            }
 
-function displayPromos(data) {
-  const shoutoutBar = document.getElementById("shoutouts");
-  const promoSection = document.getElementById("promos");
+            if (promoHTML) {
+                promoSection.innerHTML = promoHTML;
+            }
+        }
 
-  let shoutoutText = "";
-  let promoHTML = "";
+        // Load promos from API
+        async function loadPromos() {
+            try {
+                const res = await fetch(API_URL);
+                const data = await res.json();
+                displayPromos(data);
+            } catch (error) {
+                console.error("Error loading promos:", error);
+                document.getElementById("shoutouts").innerText = "⚠️ Unable to load promos";
+            }
+        }
 
-  const today = new Date().toISOString().split("T")[0];
+        // Load everything when page is ready
+        loadPromos();
+    </script>
 
-  data.forEach(item => {
-
-    if (item.date_start <= today && item.date_end >= today) {
-
-      if (item.type === "free") {
-        shoutoutText += `🔥 ${item.store_name} - ${item.message} • `;
-      }
-
-      if (item.type === "paid") {
-        promoHTML += `
-          <div class="promo-card">
-            <h4>${item.store_name}</h4>
-            <p>${item.message}</p>
-          </div>
-        `;
-      }
-
-    }
-
-  });
-
-  shoutoutBar.innerText = shoutoutText;
-  promoSection.innerHTML = promoHTML;
-}
-
-</script>
-
-    
-    <footer style="background:#f5f5f5; padding:15px; text-align:center;">
-
-  <h4>🤝 Sponsors</h4>
-  <p>Coming soon</p>
-
-  <h4>❤️ Support this app</h4>
-
-  <p>
-    Donate to support this platform and gain visibility
-  </p>
-
-  ://wa.me/59995120536?text=Hi%20I%20want%20to%20donate%20for%20this%20app%20can%20I%20get%20more%20info"
-     style="color:blue;">
-     Donate via WhatsApp
-  </a>
-
-</footer>
-
-  
-
+</body>
+</html>
