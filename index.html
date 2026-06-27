@@ -37,13 +37,25 @@
             text-align: center;
             background: #0a2a66;
             color: white;
-            padding: 10px;
+            padding: 0;
         }
         
-        header img {
+        header .banner-img {
             width: 100%;
             max-height: 180px;
             object-fit: cover;
+        }
+        
+        header .header-content {
+            padding: 15px;
+        }
+        
+        header h2 {
+            margin: 5px 0;
+        }
+        
+        header p {
+            margin: 5px 0;
         }
         
         section {
@@ -93,10 +105,12 @@
             text-decoration: none;
         }
 
+        /* Slideshow styles */
         .slideshow-container {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
+            max-width: 100%;
         }
 
         .slideshow-track {
@@ -108,53 +122,87 @@
             min-width: 100%;
             box-sizing: border-box;
             padding: 10px;
+            text-align: center;
+        }
+
+        .slide a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .slide a:hover {
+            text-decoration: none;
         }
 
         .slide img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
+            cursor: pointer;
         }
 
         .slide h4 {
             margin: 10px 0 5px 0;
             color: #0a2a66;
+            font-size: 20px;
         }
 
         .slide p {
             margin: 5px 0;
             color: #555;
+            font-size: 16px;
+        }
+
+        .slide .offer-tag {
+            display: inline-block;
+            background: #ffd700;
+            color: #0a2a66;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
         .dots {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .dot {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             margin: 0 5px;
             background: #bbb;
             border-radius: 50%;
             cursor: pointer;
+            transition: background 0.3s;
         }
 
         .dot.active {
             background: #0a2a66;
         }
+
+        .dot:hover {
+            background: #0a2a66;
+        }
+
+        /* Paid promos from API */
+        #promos .promo-card {
+            border: 2px solid #ffd700;
+            background: #fffdf0;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header with image -->
-    <header style="background:#0a2a66; color:white; text-align:center; padding:0;">
-        <img src="https://i.ibb.co/Q3NfdVCL/Whats-App-Image-2026-06-27-at-12-10-07-PM.jpg" 
-             style="width:100%; max-height:180px; object-fit:cover;" 
-             alt="Curaçao World Cup">
-        <div style="padding:15px;">
+    <!-- Header with bluewave image -->
+    <header>
+        <img src="bluewave-banner.jpg" class="banner-img" alt="Curaçao Blue Wave">
+        <div class="header-content">
             <h2>🇨🇼 Curaçao vs Germany 🇩🇪</h2>
             <p style="font-size:24px; font-weight:bold; margin:5px 0;">1–1 (17 min)</p>
             <small style="font-size:16px;">Our greatest World Cup moment 🔥</small>
@@ -184,27 +232,40 @@
     <section>
         <h3>⭐ While you're here, look for daily offers</h3>
         
-        <!-- Slideshow for 3 mock sponsors -->
+        <!-- Slideshow with 3 sponsors -->
         <div class="slideshow-container">
             <div class="slideshow-track" id="slideshowTrack">
+                <!-- Sponsor 1: Your image -->
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x250/0a2a66/ffffff?text=Pizza+King" alt="Pizza King">
-                    <h4>🍕 Pizza King</h4>
-                    <p>Buy 1 Get 1 Free - Today only!</p>
+                    <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20know%20more%20about%20this%20offer" target="_blank">
+                        <img src="https://i.ibb.co/Q3NfdVCL/Whats-App-Image-2026-06-27-at-12-10-07-PM.jpg" alt="Special Offer">
+                        <h4>🌟 Special Offer</h4>
+                        <p>Exclusive deal for Curaçao fans!</p>
+                        <span class="offer-tag">📱 Click to claim</span>
+                    </a>
                 </div>
+                <!-- Sponsor 2: Mock Pizza Place -->
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x250/ffd700/0a2a66?text=Mini+Market" alt="Mini Market">
-                    <h4>🛒 Mini Market</h4>
-                    <p>20% off all groceries - Open late!</p>
+                    <a href="https://wa.me/59995120536?text=Hi%20I%20want%20the%20Pizza%20deal" target="_blank">
+                        <img src="https://via.placeholder.com/600x300/ff6b35/ffffff?text=Pizza+King+%F0%9F%8D%95" alt="Pizza King">
+                        <h4>🍕 Pizza King</h4>
+                        <p>Buy 1 Get 1 Free - Today only!</p>
+                        <span class="offer-tag">🔥 50% OFF</span>
+                    </a>
                 </div>
+                <!-- Sponsor 3: Mock Market -->
                 <div class="slide">
-                    <img src="https://via.placeholder.com/600x250/ff6b6b/ffffff?text=Salon+Bella" alt="Salon Bella">
-                    <h4>💇 Salon Bella</h4>
-                    <p>Walk-in special: 15% off haircuts</p>
+                    <a href="https://wa.me/59995120536?text=Hi%20I%20want%20the%20Market%20deal" target="_blank">
+                        <img src="https://via.placeholder.com/600x300/2ecc71/ffffff?text=Mini+Market+%F0%9F%9B%92" alt="Mini Market">
+                        <h4>🛒 Mini Market</h4>
+                        <p>20% off all groceries - Open late!</p>
+                        <span class="offer-tag">🕐 Until 10PM</span>
+                    </a>
                 </div>
             </div>
         </div>
         
+        <!-- Dots for navigation -->
         <div class="dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
             <span class="dot" onclick="goToSlide(1)"></span>
@@ -220,7 +281,7 @@
         </p>
     </section>
 
-    <!-- Step 4: CTA for Owners -->
+    <!-- Step 4: Donate/Support -->
     <section style="text-align:center;">
         <h3>❤️ Support this app</h3>
         <p>Donate to support this platform and gain visibility</p>
@@ -244,20 +305,11 @@
     </footer>
 
     <script>
-        // Display today's date
-        const today = new Date();
-        const dateElement = document.getElementById("today-date");
-        if (dateElement) {
-            dateElement.innerText = today.toDateString();
-        }
-
-        // API Configuration
-        const API_URL = "https://script.google.com/macros/s/AKfycbz5MEMz6m5QdQ4Zlp4UOHnahJM-hSIXY0lvXp_ujecv-A8KHt6Al1cmJFe38yMDaq8D/exec";
-
         // Slideshow functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
+        let slideInterval;
 
         function goToSlide(index) {
             currentSlide = index;
@@ -269,11 +321,31 @@
             });
         }
 
-        // Auto-slide every 5 seconds
-        setInterval(() => {
+        function nextSlide() {
             let next = (currentSlide + 1) % slides.length;
             goToSlide(next);
-        }, 5000);
+        }
+
+        // Start auto-slide every 4 seconds
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+
+        // Stop auto-slide when user interacts
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        // Start slideshow
+        startSlideshow();
+
+        // Pause on hover
+        const container = document.querySelector('.slideshow-container');
+        container.addEventListener('mouseenter', stopSlideshow);
+        container.addEventListener('mouseleave', startSlideshow);
+
+        // API Configuration
+        const API_URL = "https://script.google.com/macros/s/AKfycbz5MEMz6m5QdQ4Zlp4UOHnahJM-hSIXY0lvXp_ujecv-A8KHt6Al1cmJFe38yMDaq8D/exec";
 
         // Display promos function
         function displayPromos(data) {
@@ -292,15 +364,20 @@
                             shoutoutText += `🔥 ${item.store_name} - ${item.message} • `;
                         }
                         if (item.type === "paid") {
-    promoHTML += `
-        <div class="promo-card">
-            <img src="${item.image_url || 'https://via.placeholder.com/600x200/0a2a66/ffffff?text=Promo'}" 
-                 alt="${item.store_name}">
-            <h4>⭐ ${item.store_name}</h4>
-            <p>${item.message}</p>
-        </div>
-    `;
-}
+                            promoHTML += `
+                                <div class="promo-card">
+                                    <h4>⭐ ${item.store_name}</h4>
+                                    <p>${item.message}</p>
+                                    <a href="https://wa.me/59995120536?text=Hi%20I%20want%20this%20promo%20for%20${item.store_name}" 
+                                       target="_blank" style="color:#0a2a66; font-weight:bold;">
+                                       📱 Claim this offer
+                                    </a>
+                                </div>
+                            `;
+                        }
+                    }
+                });
+            }
 
             if (shoutoutText) {
                 shoutoutBar.innerText = shoutoutText;
