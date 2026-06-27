@@ -200,45 +200,82 @@
 <body>
 
     <!-- Header with bluewave image -->
-    <header style="
-    position: relative;
-    text-align: center;
-    color: white;
-    overflow: hidden;
+   <header style="
+    position:relative;
+    overflow:hidden;
+    border-radius:0 0 18px 18px;
+    min-height:260px;
 ">
 
-    <!-- Background image -->
+    <!-- Background -->
+    <img src="bluewave-shoutout.jpg"
+         alt="Blue Wave ShoutOut"
+         style="
+            position:absolute;
+            inset:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+         ">
+
+    <!-- Dark overlay -->
     <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('bluewave-banner.jpg') center/cover no-repeat;
-        filter: brightness(0.6);
-        z-index: 0;
+        position:absolute;
+        inset:0;
+        background:linear-gradient(
+            to bottom,
+            rgba(5,20,60,.25),
+            rgba(5,20,60,.55),
+            rgba(5,20,60,.92)
+        );
+        z-index:1;
     "></div>
-<div style="
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:40%;
-    background: linear-gradient(to top, rgba(10,42,102,0.9), transparent);
-    z-index:0;
-"></div>
-    <!-- Content on top -->
-    <div style="position: relative; z-index: 1; padding: 25px 15px;">
 
-        <h2>🇨🇼 Curaçao vs Germany 🇩🇪</h2>
+    <!-- Content -->
+    <div style="
+        position:relative;
+        z-index:2;
+        min-height:260px;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
+        align-items:center;
+        text-align:center;
+        padding:25px 18px;
+        color:#fff;
+    ">
 
-        <p style="font-size:24px; font-weight:bold; margin:5px 0;">
-            1–1 (17 min)
+        <div style="
+            font-size:14px;
+            letter-spacing:2px;
+            font-weight:600;
+            color:#FFD54A;
+            text-transform:uppercase;
+            margin-bottom:8px;
+        ">
+            BLUE WAVE • WORLD CUP 2026
+        </div>
+
+        <h1 style="
+            margin:0;
+            font-size:34px;
+            line-height:1.1;
+            font-weight:900;
+            text-shadow:2px 2px 8px rgba(0,0,0,.5);
+        ">
+            🙌 Let's Show Some Gratitude
+        </h1>
+
+        <p style="
+            margin:12px 0 0;
+            font-size:18px;
+            color:#ffffff;
+            max-width:500px;
+        ">
+            Send your <span style="color:#FFD54A;font-weight:bold;">ShoutOut</span>
+            to our heroes who made history for Curaçao.
         </p>
-
-        <small style="font-size:16px;">
-            Our greatest World Cup moment 🔥
-        </small>
 
     </div>
 
