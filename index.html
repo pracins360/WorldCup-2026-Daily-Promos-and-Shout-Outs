@@ -12,6 +12,18 @@
             padding: 10px;
             margin-bottom: 12px;
             background: white;
+            transition: transform 0.3s;
+        }
+        
+        .promo-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .promo-card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
         }
         
         body {
@@ -30,22 +42,24 @@
         
         header img {
             width: 100%;
-            max-height: 120px;
+            max-height: 180px;
             object-fit: cover;
         }
         
         section {
-            padding: 10px;
+            padding: 15px;
             background: white;
             margin: 10px;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         marquee {
             background: #ffd700;
-            padding: 8px;
-            margin: 10px;
+            padding: 10px;
+            margin: 10px 0;
             border-radius: 8px;
+            font-weight: bold;
         }
         
         footer {
@@ -64,73 +78,156 @@
             text-decoration: underline;
         }
 
-        .step-badge {
-            display: inline-block;
+        .cta-button {
             background: #0a2a66;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 5px;
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background: #1a3a76;
+            text-decoration: none;
+        }
+
+        .slideshow-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slideshow-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slide h4 {
+            margin: 10px 0 5px 0;
+            color: #0a2a66;
+        }
+
+        .slide p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #0a2a66;
         }
     </style>
 </head>
 <body>
 
-    <!-- 🟦 Step 1: Header -->
-    <header style="background:#0a2a66; color:white; text-align:center;">
-        <img src="bluewave.jpg" style="width:100%; max-height:180px; object-fit:cover;" alt="Curaçao Wave">
-        <h3>Curacao 🇨🇼 vs Germany 🇩🇪</h3>
-        <p>1–1 (17 min)</p>
-        <small>Our greatest World Cup moment 🔥</small>
+    <!-- Header with image -->
+    <header style="background:#0a2a66; color:white; text-align:center; padding:0;">
+        <img src="https://i.ibb.co/Q3NfdVCL/Whats-App-Image-2026-06-27-at-12-10-07-PM.jpg" 
+             style="width:100%; max-height:180px; object-fit:cover;" 
+             alt="Curaçao World Cup">
+        <div style="padding:15px;">
+            <h2>🇨🇼 Curaçao vs Germany 🇩🇪</h2>
+            <p style="font-size:24px; font-weight:bold; margin:5px 0;">1–1 (17 min)</p>
+            <small style="font-size:16px;">Our greatest World Cup moment 🔥</small>
+        </div>
     </header>
     
-    <!-- 🟦 Step 2: Gratitude & Shoutouts -->
-    <section style="padding:12px; text-align:center;">
-        <span class="step-badge">Step 1</span>
+    <!-- Step 1: Proud of Curaçao -->
+    <section style="text-align:center;">
         <h3>🇨🇼 We are proud of Curaçao!</h3>
         <p>Now let's show our gratitude.<br>Send a FREE shout-out today 💙</p>
         <br>
-        <a href="https://wa.me/59995120536?text=Hi%20please%20add%20my%20free%20shout-out.%0A%0ACompany%20Name:%20_________%0AShout-out:%20_________" target="_blank">
+        <a href="https://wa.me/59995120536?text=Hi%20please%20add%20my%20free%20shout-out.%0A%0ACompany%20Name:%20_________%0AShout-out:%20_________" 
+           target="_blank" class="cta-button">
             📢 Send your FREE shout-out
         </a>
     </section>
 
-    <!-- 🟦 Step 3: Scrolling Messages -->
+    <!-- Step 2: Scrolling Messages -->
     <section>
-        <span class="step-badge">Step 2</span>
-        <h3>Businesses join the gratitude</h3>
+        <h3>💼 Businesses join the gratitude</h3>
         <marquee id="shoutouts" style="background:#ffd700; padding:10px; font-weight:bold; border-radius:8px;">
             Loading shoutouts...
         </marquee>
     </section>
 
-    <!-- 🟦 Step 4: Paid Promos -->
+    <!-- Step 3: Daily Offers with Slideshow -->
     <section>
-        <span class="step-badge">Step 3</span>
-        <h3>⭐ While you're here, enjoy offers</h3>
-        <div id="promos">
-            <div class="promo-card">
-                <img src="promo1.jpg" style="width:100%; border-radius:10px;" alt="Pizza King">
-                <h4>Pizza King</h4>
-                <p>Buy 1 Get 1 Free 🍕</p>
+        <h3>⭐ While you're here, look for daily offers</h3>
+        
+        <!-- Slideshow for 3 mock sponsors -->
+        <div class="slideshow-container">
+            <div class="slideshow-track" id="slideshowTrack">
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x250/0a2a66/ffffff?text=Pizza+King" alt="Pizza King">
+                    <h4>🍕 Pizza King</h4>
+                    <p>Buy 1 Get 1 Free - Today only!</p>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x250/ffd700/0a2a66?text=Mini+Market" alt="Mini Market">
+                    <h4>🛒 Mini Market</h4>
+                    <p>20% off all groceries - Open late!</p>
+                </div>
+                <div class="slide">
+                    <img src="https://via.placeholder.com/600x250/ff6b6b/ffffff?text=Salon+Bella" alt="Salon Bella">
+                    <h4>💇 Salon Bella</h4>
+                    <p>Walk-in special: 15% off haircuts</p>
+                </div>
             </div>
         </div>
+        
+        <div class="dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+
+        <!-- Paid promos from API will appear here -->
+        <div id="promos" style="margin-top:15px;"></div>
+        
         <br>
-        <p>📢 Show our app users your daily promo</p>
-        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20add%20a%20paid%20promo" target="_blank">
-            💼 Promote your business
-        </a>
+        <p style="text-align:center; font-size:16px; color:#0a2a66; font-weight:bold;">
+            🔥 Come back tomorrow for Super daily offers!
+        </p>
     </section>
 
-    <!-- 🟦 Step 5: CTA for Owners -->
+    <!-- Step 4: CTA for Owners -->
     <section style="text-align:center;">
-        <span class="step-badge">Step 4</span>
-        <h3>💼 Want to be visible?</h3>
-        <p>Get your business featured here!<br>Reach thousands of customers daily.</p>
+        <h3>❤️ Support this app</h3>
+        <p>Donate to support this platform and gain visibility</p>
         <br>
-        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20promote%20my%20business%20on%20your%20app" target="_blank" style="background:#0a2a66; color:white; padding:10px 20px; border-radius:25px; display:inline-block;">
-            📞 Contact us now
+        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20donate%20for%20this%20app%20can%20I%20get%20more%20info" 
+           target="_blank" class="cta-button">
+           💝 Donate via WhatsApp
         </a>
     </section>
 
@@ -143,24 +240,40 @@
 
     <!-- Footer -->
     <footer>
-        <h4>🤝 Sponsors</h4>
-        <p>Coming soon</p>
-        
-        <h4>❤️ Support this app</h4>
-        <p>Donate to support this platform and gain visibility</p>
-        <a href="https://wa.me/59995120536?text=Hi%20I%20want%20to%20donate%20for%20this%20app%20can%20I%20get%20more%20info" 
-           style="color:blue;" target="_blank">
-           Donate via WhatsApp
-        </a>
+        <p>Made with ❤️ for Curaçao</p>
     </footer>
 
     <script>
         // Display today's date
         const today = new Date();
-        document.getElementById("today-date").innerText = today.toDateString();
+        const dateElement = document.getElementById("today-date");
+        if (dateElement) {
+            dateElement.innerText = today.toDateString();
+        }
 
         // API Configuration
         const API_URL = "https://script.google.com/macros/s/AKfycbz5MEMz6m5QdQ4Zlp4UOHnahJM-hSIXY0lvXp_ujecv-A8KHt6Al1cmJFe38yMDaq8D/exec";
+
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function goToSlide(index) {
+            currentSlide = index;
+            const track = document.getElementById('slideshowTrack');
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            let next = (currentSlide + 1) % slides.length;
+            goToSlide(next);
+        }, 5000);
 
         // Display promos function
         function displayPromos(data) {
@@ -179,16 +292,15 @@
                             shoutoutText += `🔥 ${item.store_name} - ${item.message} • `;
                         }
                         if (item.type === "paid") {
-                            promoHTML += `
-                                <div class="promo-card">
-                                    <h4>${item.store_name}</h4>
-                                    <p>${item.message}</p>
-                                </div>
-                            `;
-                        }
-                    }
-                });
-            }
+    promoHTML += `
+        <div class="promo-card">
+            <img src="${item.image_url || 'https://via.placeholder.com/600x200/0a2a66/ffffff?text=Promo'}" 
+                 alt="${item.store_name}">
+            <h4>⭐ ${item.store_name}</h4>
+            <p>${item.message}</p>
+        </div>
+    `;
+}
 
             if (shoutoutText) {
                 shoutoutBar.innerText = shoutoutText;
