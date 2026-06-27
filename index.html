@@ -200,14 +200,49 @@
 <body>
 
     <!-- Header with bluewave image -->
-    <header>
-        <img src="bluewave-banner.jpg" class="banner-img" alt="Curaçao Blue Wave">
-        <div class="header-content">
-            <h2>🇨🇼 Curaçao vs Germany 🇩🇪</h2>
-            <p style="font-size:24px; font-weight:bold; margin:5px 0;">1–1 (17 min)</p>
-            <small style="font-size:16px;">Our greatest World Cup moment 🔥</small>
-        </div>
-    </header>
+    <header style="
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+">
+
+    <!-- Background image -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('bluewave-banner.jpg') center/cover no-repeat;
+        filter: brightness(0.6);
+        z-index: 0;
+    "></div>
+<div style="
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:40%;
+    background: linear-gradient(to top, rgba(10,42,102,0.9), transparent);
+    z-index:0;
+"></div>
+    <!-- Content on top -->
+    <div style="position: relative; z-index: 1; padding: 25px 15px;">
+
+        <h2>🇨🇼 Curaçao vs Germany 🇩🇪</h2>
+
+        <p style="font-size:24px; font-weight:bold; margin:5px 0;">
+            1–1 (17 min)
+        </p>
+
+        <small style="font-size:16px;">
+            Our greatest World Cup moment 🔥
+        </small>
+
+    </div>
+
+</header>
     
     <!-- Step 1: Proud of Curaçao -->
     <section style="text-align:center;">
